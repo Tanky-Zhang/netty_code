@@ -399,6 +399,7 @@
     <module>transport-blockhound-tests</module>
     <module>microbench</module>
     <module>bom</module>
+    <module>netty-test</module>
   </modules>
 
   <dependencyManagement>
@@ -1148,6 +1149,7 @@
                 </if>
 
                 <!-- Print the obtained commit information. -->
+                <!--suppress UnresolvedMavenProperty -->
                 <echo>Current commit: ${shortCommitHash} on ${commitDate}</echo>
 
                 <!-- Generate the .properties file. -->
@@ -1156,6 +1158,7 @@
                 -->
                 <property name="metaInfDir" value="${project.build.outputDirectory}/META-INF" />
                 <property name="versionPropFile" value="${metaInfDir}/${project.groupId}.versions.properties" />
+                <!--suppress UnresolvedMavenProperty -->
                 <mkdir dir="${metaInfDir}" />
                 <delete file="${versionPropFile}" quiet="true" />
 
